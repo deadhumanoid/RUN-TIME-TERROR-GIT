@@ -185,6 +185,7 @@ const Dashboard = () => {
             onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
           />
         </div> 
+
         {/* Center Column - Map */}
         <div className="lg:col-span-1">
           <Card className="h-[50vh]">
@@ -201,22 +202,16 @@ const Dashboard = () => {
               />
             </CardContent>
           </Card>
+        </div>
 
-    </CardContent>
-  </Card>
+        {/* new 2 */}
+        {/* Virtual Decision Assistant */} 
+          <VirtualDecisionAssistant 
+            currentLevel={currentThreatLevel} 
+            threats={activeThreats}
+            onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
+          />
 
-  {/* Assistant below */}
-  <div className="relative z-10">                    {/* <-- belt-and-suspenders if needed */}
-    <VirtualDecisionAssistant
-      currentLevel={currentThreatLevel}
-      threats={activeThreats}
-      onActionExecute={(id) => setExecutedActions(p => [...p, id])}
-    />
-  </div>
-</div>
-
-
-       
         {/* Right Column - Active Alerts & Logs */}
         <div className="lg:col-span-1 space-y-6 max-h-[600px] ">
           <AlertPanel threats={activeThreats} onUpdateThreat={setActiveThreats} />
