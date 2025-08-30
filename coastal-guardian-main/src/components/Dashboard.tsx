@@ -185,32 +185,30 @@ const Dashboard = () => {
             onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
           />
         </div> 
+        {/* centre */}
+        <div className="lg:col-span-1 space-y-6">
+  <Card className="h-[50vh] overflow-hidden">        {/* <-- add overflow-hidden */}
+    <CardHeader>…</CardHeader>
+    <CardContent className="p-0 relative">           {/* <-- add relative */}
+      <div className="relative h-full">              {/* <-- ensure a positioning context */}
+        <GujaratThreatMap
+          threats={activeThreats}
+          onLocationClick={setSelectedLocation}
+        />
+      </div>
+    </CardContent>
+  </Card>
 
-        {/* Center Column - Map */}
-        <div className="lg:col-span-1">
-          <Card className="h-[50vh]">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <MapPin className="h-5 w-5 text-primary" />
-                <span>Threat Map</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-              <GujaratThreatMap 
-                threats={activeThreats} 
-                onLocationClick={setSelectedLocation}
-              />
-            </CardContent>
-          </Card>
+  {/* Assistant below */}
+  <div className="relative z-10">                    {/* <-- belt-and-suspenders if needed */}
+    <VirtualDecisionAssistant
+      currentLevel={currentThreatLevel}
+      threats={activeThreats}
+      onActionExecute={(id) => setExecutedActions(p => [...p, id])}
+    />
+  </div>
+</div>
 
-          {/* Keep ONLY this instance */}
-  <VirtualDecisionAssistant
-    currentLevel={currentThreatLevel}
-    threats={activeThreats}
-    onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
-  />
-
-        </div>
 
        
         {/* Right Column - Active Alerts & Logs */}
