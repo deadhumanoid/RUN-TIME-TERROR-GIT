@@ -205,7 +205,7 @@ const Dashboard = () => {
         </div>
 
         {/* Right Column - Active Alerts & Logs */}
-        <div className="lg:col-span-1 space-y-6 max-h-[800px] ">
+        <div className="lg:col-span-1 space-y-6 max-h-[600px] ">
           <AlertPanel threats={activeThreats} onUpdateThreat={setActiveThreats} />
           <OperationalLogger executedActions={executedActions} />
         </div>
