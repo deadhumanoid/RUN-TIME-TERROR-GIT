@@ -178,12 +178,6 @@ const Dashboard = () => {
             onGraphsView={() => setShowGraphs(true)} 
           />
 
-        {/* Virtual Decision Assistant */} 
-          <VirtualDecisionAssistant 
-            currentLevel={currentThreatLevel} 
-            threats={activeThreats}
-            onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
-          />
         </div> 
 
         {/* Center Column - Map */}
