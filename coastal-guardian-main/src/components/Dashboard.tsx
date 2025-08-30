@@ -182,7 +182,7 @@ const Dashboard = () => {
 
        {/* Center Column – Map */}
 <div className="lg:col-span-1 space-y-6">
-  <Card className="h-[60vh] min-h-[420px] overflow-hidden isolate flex flex-col">
+  <Card className="h-[100vh] min-h-[420px] overflow-hidden isolate flex flex-col">
     <CardHeader className="shrink-0">
       <CardTitle className="flex items-center space-x-2">
         <MapPin className="h-5 w-5 text-primary" />
