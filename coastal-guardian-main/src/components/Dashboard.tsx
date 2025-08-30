@@ -196,13 +196,14 @@ const Dashboard = () => {
               />
             </CardContent>
           </Card>
-
+        <div className="relative z-10"> 
             {/* Virtual Decision Assistant */} 
           <VirtualDecisionAssistant 
             currentLevel={currentThreatLevel} 
             threats={activeThreats}
             onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
           />
+          </div>
         </div>
 
 
