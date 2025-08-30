@@ -202,6 +202,14 @@ const Dashboard = () => {
               />
             </CardContent>
           </Card>
+
+          {/* Keep ONLY this instance */}
+  <VirtualDecisionAssistant
+    currentLevel={currentThreatLevel}
+    threats={activeThreats}
+    onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
+  />
+
         </div>
 
        
