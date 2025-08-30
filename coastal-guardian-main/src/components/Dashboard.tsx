@@ -180,31 +180,39 @@ const Dashboard = () => {
 
         </div> 
 
-        {/* Center Column - Map */}
-        <div className="lg:col-span-1">
-          <Card className="h-[50vh]">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <MapPin className="h-5 w-5 text-primary" />
-                <span>Threat Map</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-              <GujaratThreatMap 
-                threats={activeThreats} 
-                onLocationClick={setSelectedLocation}
-              />
-            </CardContent>
-          </Card>
-        <div className="relative z-10"> 
-            {/* Virtual Decision Assistant */} 
-          <VirtualDecisionAssistant 
-            currentLevel={currentThreatLevel} 
-            threats={activeThreats}
-            onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
-          />
-          </div>
-        </div>
+       {/* Center Column – Map */}
+<div className="lg:col-span-1 space-y-6">
+  <Card className="h-[60vh] min-h-[420px] overflow-hidden isolate flex flex-col">
+    <CardHeader className="shrink-0">
+      <CardTitle className="flex items-center space-x-2">
+        <MapPin className="h-5 w-5 text-primary" />
+        <span>Threat Map</span>
+      </CardTitle>
+    </CardHeader>
+
+    {/* Map fills the rest of the card */}
+    <CardContent className="p-0 relative flex-1">
+      <div className="absolute inset-0">
+        <GujaratThreatMap
+          threats={activeThreats}
+          onLocationClick={setSelectedLocation}
+        />
+      </div>
+    </CardContent>
+  </Card>
+
+  {/* Assistant below map */}
+  <div className="relative z-10">
+    <VirtualDecisionAssistant
+      currentLevel={currentThreatLevel}
+      threats={activeThreats}
+      onActionExecute={(actionId) =>
+        setExecutedActions((prev) => [...prev, actionId])
+      }
+    />
+  </div>
+</div>
+
 
 
         {/* Right Column - Active Alerts & Logs */}
