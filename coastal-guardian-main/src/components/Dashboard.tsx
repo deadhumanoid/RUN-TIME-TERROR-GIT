@@ -188,7 +188,7 @@ const Dashboard = () => {
 
         {/* Center Column - Map */}
         <div className="lg:col-span-1">
-          <Card className="h-1/2">
+          <Card className="h-[50vh]">
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <MapPin className="h-5 w-5 text-primary" />
