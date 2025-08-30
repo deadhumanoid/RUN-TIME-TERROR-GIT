@@ -178,13 +178,7 @@ const Dashboard = () => {
             onGraphsView={() => setShowGraphs(true)} 
           />
 
-          {/* Virtual Decision Assistant */}
-          <VirtualDecisionAssistant 
-            currentLevel={currentThreatLevel} 
-            threats={activeThreats}
-            onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
-          />
-        </div>
+     
 
         {/* Center Column - Map */}
         <div className="lg:col-span-1">
@@ -202,6 +196,15 @@ const Dashboard = () => {
               />
             </CardContent>
           </Card>
+
+{/*           new */}
+          {/* Virtual Decision Assistant */}
+          <VirtualDecisionAssistant 
+            currentLevel={currentThreatLevel} 
+            threats={activeThreats}
+            onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
+          />
+        </div>
         </div>
 
         {/* Right Column - Active Alerts & Logs */}
