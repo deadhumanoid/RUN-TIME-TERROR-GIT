@@ -204,13 +204,6 @@ const Dashboard = () => {
           </Card>
         </div>
 
-        {/* new 2 */}
-        {/* Virtual Decision Assistant */} 
-          <VirtualDecisionAssistant 
-            currentLevel={currentThreatLevel} 
-            threats={activeThreats}
-            onActionExecute={(actionId) => setExecutedActions(prev => [...prev, actionId])}
-          />
 
         {/* Right Column - Active Alerts & Logs */}
         <div className="lg:col-span-1 space-y-6 max-h-[600px] ">
